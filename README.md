@@ -1,8 +1,8 @@
-# Using the PayPal Express Checkout API in PHP to make a PayPal payment
+# Using the PayPal Adaptive Payment API in PHP to make a Chained/Parallel payment
 
 [![Build Status](https://travis-ci.org/commercefactory/005-paypal-express-checkout-php.svg?branch=master)](https://travis-ci.org/commercefactory/005-paypal-express-checkout-php)
 
-This is an example of the PayPal Express Checkout API using plain PHP to make a PayPal payment.
+This is an example of the PayPal Adaptive Payment API in PHP to make a Chained/Parallel payment.
 
 This code does not use an SDK although it uses a basic wrapper to handle the NVP API. You can use [this library](includes/paypal.php) as a drop in for your project.
 
