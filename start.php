@@ -2,6 +2,11 @@
 require ('includes/config.php');
 require ('includes/paypal.php');
 
+if (dirname($_SERVER['PHP_SELF']) == "/") {$folder = "";
+} else {
+	$folder = dirname($_SERVER['PHP_SELF']);
+}
+
 $paypal = new PayPal($config);
 
 $result = $paypal->call(array(
@@ -28,8 +33,8 @@ $result = $paypal->call(array(
 		'requestEnvelope' => array(
 			'errorLanguage' => 'en_US',
 		),
-		'returnUrl' => 'http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/success.php?payKey=${payKey}',
-		'cancelUrl' => 'http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/cancel.php',
+		'returnUrl' => 'http://'.$_SERVER['HTTP_HOST'].$folder.'/success.php?payKey=${payKey}',
+		'cancelUrl' => 'http://'.$_SERVER['HTTP_HOST'].$folder.'/cancel.php',
 	), "Pay");
 
 if ($result['responseEnvelope']['ack'] == 'Success') {
