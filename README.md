@@ -2,7 +2,7 @@
 
 This is an example of the PayPal Adaptive Payment API in PHP to make a Chained/Parallel payment.
 
-This code does not use an SDK although it uses a basic wrapper to handle the NVP API. You can use [this library](includes/paypal.php) as a drop in for your project.
+This code does not use an SDK although it uses a basic wrapper to handle the NVP API. You can use [this library](includes/paypal-ap.php) as a drop in for your project.
 
 ## Technology
 
@@ -32,4 +32,4 @@ This demo uses
 
 ## Useful link
 
-* [List of methods available on the Merchant API](https://developer.paypal.com/docs/classic/api/#merchant)
+* [List of methods available on the Adaptive Payments API](https://developer.paypal.com/docs/classic/api/#ap)
