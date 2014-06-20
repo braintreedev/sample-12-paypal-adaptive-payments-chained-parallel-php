@@ -12,6 +12,10 @@ This demo uses
 
 ## Running the demo
 
+* Clone this repo `git clone https://github.com/commercefactory/paypal-adaptive-payments-chained-payments-php.git`
+* Change into the folder `cd paypal-adaptive-payments-chained-payments-php`
+* Initialise the submodule `git submodule init`
+* Update the submodule `git submodule update`
 * Run `php -S 127.0.0.1:8080` to start the app (requires PHP 5.4 or above) or load it in your web server of choice.
 * Visit `http://127.0.0.1:8080/` in your browser
 * Click the __"Make a payment"__ link

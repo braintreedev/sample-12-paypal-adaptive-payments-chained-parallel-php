@@ -32,5 +32,5 @@ if ($result['responseEnvelope']['ack'] == 'Success') {
   $_SESSION['payKey'] = $result["payKey"];
   $paypal->redirect($result);
 } else {
-  echo 'Handle the payment creation failure <br>';
+  echo 'Handle the payment creation failure';
 }
