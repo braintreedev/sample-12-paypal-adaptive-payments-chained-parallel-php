@@ -23,7 +23,7 @@ class PayPal {
         if (dirname($_SERVER['PHP_SELF']) == "/") $folder = "";
         else $folder = dirname($_SERVER['PHP_SELF']);
 
-        $options['returnUrl'] = 'http://'.$_SERVER['HTTP_HOST'].$folder.'/success.php?payKey=${payKey}';
+        $options['returnUrl'] = 'http://'.$_SERVER['HTTP_HOST'].$folder.'/success.php?'.strtolower($calltype).'key=${'.$calltype.'key}';
         $options['cancelUrl'] = 'http://'.$_SERVER['HTTP_HOST'].$folder.'/cancel.php';
 
     return $this->_curl($this->api_url($calltype), $options, $this->headers($this->config));
@@ -31,7 +31,10 @@ class PayPal {
   }
 
   public function redirect($response) {
-    $redirect_url = sprintf("%s?cmd=_ap-payment&paykey=%s", $this->redirect_url(), $response["payKey"]);
+
+    if(@$response["payKey"]) $redirect_url = sprintf("%s?cmd=_ap-payment&paykey=%s", $this->redirect_url(), $response["payKey"]);
+    else $redirect_url = sprintf("%s?cmd=_ap-preapproval&preapprovalkey=%s", $this->redirect_url(), $response["preapprovalKey"]);
+
     header("Location: $redirect_url");
   }
 

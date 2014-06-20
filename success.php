@@ -3,7 +3,7 @@
 require('includes/config.php');
 require('includes/paypal-ap.php');
 
-if (!$_GET['payKey']) {
+if (@!$_GET['paykey']) {
   echo 'payKey not available';
 } else {
 
@@ -12,7 +12,7 @@ if (!$_GET['payKey']) {
   $result = $paypal->call(
     array(
       'actionType'  => 'Pay',
-      'payKey'  => $_GET['payKey'],
+      'payKey'  => $_GET['paykey'],
       'requestEnvelope'  => array(
       'errorLanguage'  => 'en_US',
     )
