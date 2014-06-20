@@ -11,22 +11,25 @@ $result = $paypal->call(
     'currencyCode'  => 'USD',
     'feesPayer'  => 'EACHRECEIVER',
     'memo'  => 'Order number #123',
+
+    'cancelUrl' => 'cancel.php',
+    'returnUrl' => 'success.php',
+
     'receiverList' => array(
-    'receiver' => array(
+      'receiver' => array(
         array(
-          'amount'  => '21.00',
-          'email'  => 'customer@commercefactory.org',
+          'amount'  => '100.00',
+          'email'  => 'info-facilitator@commercefactory.org',
           'primary'  => 'true',
         ),
         array(
-          'amount'  => '11.00',
-          'email'  => 'tester@commercefactory.org',
+          'amount'  => '90.00',
+          'email'  => 'us-provider@commercefactory.org',
         )
       ),
     ),
-    'returnUrl' => 'success.php',
-    'cancelUrl' => 'cancel.php',
-  ), "Pay");
+  ), 'Pay'
+);
 
 if ($result['responseEnvelope']['ack'] == 'Success') {
   $_SESSION['payKey'] = $result["payKey"];
