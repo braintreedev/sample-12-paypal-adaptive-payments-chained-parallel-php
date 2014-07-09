@@ -23,9 +23,13 @@ $result = $paypal->call(
           'primary'  => 'true',
         ),
         array(
-          'amount'  => '90.00',
+          'amount'  => '45.00',
           'email'  => 'us-provider@commercefactory.org',
-        )
+        ),
+        array(
+          'amount'  => '45.00',
+          'email'  => 'us-provider2@commercefactory.org',
+        ),
       ),
     ),
   ), 'Pay'
