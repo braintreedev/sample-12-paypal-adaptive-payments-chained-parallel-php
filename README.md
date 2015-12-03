@@ -1,10 +1,8 @@
 # Using the PayPal Adaptive Payment API in PHP to make a Chained and Parallel payment
 
-[![Build Status](https://travis-ci.org/commercefactory/012-paypal-adaptive-payments-chained-parallel-php.svg)](https://travis-ci.org/commercefactory/012-paypal-adaptive-payments-chained-parallel-php)
-
 This is an example of the PayPal Adaptive Payment API in PHP to make a Chained and Parallel payment.
 
-This code does not use an SDK but instead uses a basic wrapper to handle the NVP API. You can use [this wrapper](https://github.com/commercefactory/paypal-adaptive-payments-wrapper-php) as a drop in for your project.
+This code does not use an SDK but instead uses a basic wrapper to handle the NVP API. You can use [this wrapper](https://github.com/braintreedev/paypal-adaptive-payments-wrapper-php) as a drop in for your project.
 
 ## Technology
 
